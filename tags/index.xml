@@ -5,7 +5,6 @@
     <link>punit-haria.github.io/tags/</link>
     <description>Recent content in Tags on Your site title</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; Copyright notice</copyright><atom:link href="punit-haria.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="punit-haria.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
