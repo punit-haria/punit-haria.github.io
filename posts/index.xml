@@ -7,7 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/punit-haria&#34;&gt;Punit Shah&lt;/a&gt; 2017</copyright>
-    <lastBuildDate>Fri, 17 Nov 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://punit-haria.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://punit-haria.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Multimodal Example using Images</title>
+      <link>https://punit-haria.github.io/posts/multimodal_example/</link>
+      <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://punit-haria.github.io/posts/multimodal_example/</guid>
+      <description>In the previous post, I described the general multimodal learning problem and how one could approach it using deep generative models. I also detailed the semi-supervised and unsupervised versions of the problem, and as well as a method for scaling the approach to more than 2 modalities. In this post, the focus is on illustrating these ideas and applying them to an image dataset. This example is based on my master&amp;rsquo;s thesis, which will provide greater detail on the multimodal learning problem.</description>
+    </item>
+    
+    <item>
+      <title>Multimodal Learning</title>
+      <link>https://punit-haria.github.io/posts/multimodal/</link>
+      <pubDate>Tue, 24 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://punit-haria.github.io/posts/multimodal/</guid>
+      <description>Animals use their many sensory organs in beautiful synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in a multitude of forms. Integrating data from multiple modalities is vital to many sectors, especially healthcare, where electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to doctors&#39; notes.</description>
+    </item>
+    
+    <item>
+      <title>The Variational Autoencoder</title>
+      <link>https://punit-haria.github.io/posts/vae/</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://punit-haria.github.io/posts/vae/</guid>
+      <description>In the previous post, I detailed how linear Gaussian models provide a unified perspective for a host of unsupervised learning methods. The fundamental commonality across these models is the linear relationship between the observed and latent (or hidden) variables. But when working with high-dimensional, composite data (e.g. natural images, video, language), we&amp;rsquo;d rather not restrict ourselves to a linear model. Instead, we want a model that can capture complex interactions between the observation and latent space.</description>
+    </item>
+    
+    <item>
+      <title>Textual Entailment</title>
+      <link>https://punit-haria.github.io/posts/textual_entailment/</link>
+      <pubDate>Fri, 08 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://punit-haria.github.io/posts/textual_entailment/</guid>
+      <description>Storytelling is inherent to our nature and is found in almost every human endeavor: speech, literature, film, theatre, music, the visual arts, and journalism, to name a few. At the earliest of ages, we are attuned to and even crave the experience of a good story, and crucially, they drive our development. They guide us, teach us about our histories and cultures, and shape us as we form our identities. In listening to and learning from these stories, we build on our innate ability to ground the words and symbols we perceive into the complex world around us.</description>
+    </item>
+    
     <item>
       <title>Linear Models</title>
       <link>https://punit-haria.github.io/posts/linear-models/</link>
@@ -16,6 +52,16 @@
       <guid>https://punit-haria.github.io/posts/linear-models/</guid>
       <description>Several methods for unsupervised learning have seen ubiquitous use, past and present, across many scientific communities. These include factor analysis, principal component analysis (PCA), Gaussian mixture models, vector quantization, Kalman filters, and hidden Markov models (HMMs). In this post, I outline how these methods can be unified into a single framework, as is shown in the classic Roweis and Ghahramani (1999) paper.
 Factor analysis is a method for explaining the variance among observations using a smaller set of unobserved (or latent) factors.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>https://punit-haria.github.io/posts/about/</link>
+      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://punit-haria.github.io/posts/about/</guid>
+      <description>Hi! My name is Punit, and I am a PhD student at the University of Toronto. I&amp;rsquo;m interested in machine learning for relational, sequential, and multimodal data, and more generally probabilistic inference and deep learning. Previously, I completed a MSc in machine learning at University College London, and a BSc in computer science and statistics at the University of British Columbia. I&amp;rsquo;m from Nairobi, Kenya.
+In this space, I&amp;rsquo;d like to wholeheartedly explore and ruminate on classical and state-of-the-art concepts in statistical machine learning.</description>
     </item>
     
   </channel>

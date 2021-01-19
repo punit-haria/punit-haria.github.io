@@ -3,18 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://punit-haria.github.io/posts/multimodal_example/</loc>
+    <lastmod>2018-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://punit-haria.github.io/</loc>
+    <lastmod>2018-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://punit-haria.github.io/posts/</loc>
+    <lastmod>2018-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://punit-haria.github.io/posts/multimodal/</loc>
+    <lastmod>2018-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://punit-haria.github.io/posts/vae/</loc>
+    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://punit-haria.github.io/posts/textual_entailment/</loc>
+    <lastmod>2017-12-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://punit-haria.github.io/posts/linear-models/</loc>
     <lastmod>2017-11-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://punit-haria.github.io/</loc>
-    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://punit-haria.github.io/posts/</loc>
-    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
+    <loc>https://punit-haria.github.io/posts/about/</loc>
+    <lastmod>2016-12-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
