@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Multimodal Learning | ML is just Stats ;)</title>
+
+<meta property='og:title' content='Multimodal Learning - ML is just Stats ;)'>
+<meta property='og:description' content='Animals use their many sensory organs in beautiful synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in a multitude of forms. Integrating data from multiple modalities is vital to many sectors, especially healthcare, where electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to doctors&#39; notes.'>
+<meta property='og:url' content='https://punit-haria.github.io/posts/multimodal/'>
+<meta property='og:site_name' content='ML is just Stats ;)'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/76d14f306d44ac5c6b2d010fef6889ce?s=256'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2018-04-24T00:00:00Z'><meta property='article:modified_time' content='2018-04-24T00:00:00Z'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@twitter'><meta name='twitter:creator' content='@twitter'>
+
+
+<link href="https://punit-haria.github.io/index.xml" rel="alternate" type="application/rss+xml" title="ML is just Stats ;)">
+
+<link rel="stylesheet" href="/css/style.css"><link rel='stylesheet' href='https://punit-haria.github.io/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://punit-haria.github.io/posts/multimodal/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://punit-haria.github.io/">
+          <h1 id="nav-heading" class="title is-4">ML is just Stats ;)</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/punit-haria'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/twitter'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:shahpunit@google.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="linkedin" href='https://linkedin.com/in/punitharia'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+    </div>
+    <h2 class="subtitle is-6">April 24, 2018</h2>
+    <h1 class="title">Multimodal Learning</h1>
+    
+    <div class="content">
+      <p>Animals use their many sensory organs in beautiful synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in a multitude of forms. Integrating data from multiple modalities is vital to many sectors, especially healthcare, where electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to doctors' notes. Analogous problems exist for enterprises, financial institutions, and government, to name a few. There are many approaches to integrating data. We can concatenate different modalities into an end-to-end learning algorithm, or we can train separate learners on each modality and later integrate them via voting/averaging, or we can do some combination thereof.</p>
+<p>But in many settings, each modality has very distinct statistical properties and integrating them together isn&rsquo;t trivial. <a href="https://dl.acm.org/citation.cfm?id=3104569">Ngiam et al. (2011)</a> elucidate this point quite well. They describe how audio and video data for speech recognition is typically correlated at the level of phonemes and visemes, meaning that relating raw pixels to audio waveforms or spectograms is not straightforward. In response to this problem, they propose a deep autoencoder model for creating a shared representation of audio-video data, and they demonstrate how this representation improves performance on a variety of tasks. Another example is <a href="https://papers.nips.cc/paper/5204-devise-a-deep-visual-semantic-embedding-model">Frome et al. (2013)</a> where dense representations of textual data are created using a neural language model, and another neural network is then trained to learn the mapping from images to text labels in this embedding space. This approach in effect creates a shared representation for image and text modalities.</p>
+<p><a href="http://jmlr.org/papers/v15/srivastava14b.html">Srivastava and Salakhutdinov (2012)</a> approach the multimodal learning problem using a generative model, specifically the deep Boltzmann machine. They apply their model to image-text data as well as audio-video data, and evaluate the quality of their shared representations on information retrieval and classification tasks. They demonstrate improvements over the previously proposed deep autoencoder-based methods. One key advantage of their approach is the use of a generative model, which means that missing data can naturally be dealt with.</p>
+<h3 id="generative-modeling">Generative Modeling</h3>
+<p>Suppose we have two modalities we&rsquo;d like to integrate together for downstream decision making, e.g. prediction, outlier detection, etc. Further suppose that aligning or pairing the inputs is expensive, meaning we only have a few hundred paired examples of the two modalities, and a plethora of unpaired data (the cost of pairing data can become very expensive in many cases). We would prefer to make the best of the few paired examples we have, while also utilizing the vast amounts of unpaired data.</p>
+<p>We can use a generative model to approach this semi-supervised learning problem in order to handle the missingness (lack of pairings) in our data. In the simplest case, we introduce a single latent variable which will play a key role in generating the two observed modalities. This results in the model visualized below in graphical notation, where $y_1$ and $y_2$ are the two inputs, and $x$ is the latent variable.</p>
+<figure class="center">
+    <img src="/img/multimodal/multimodal_vae.png" width="20%"/> <figcaption>
+            <h4>Generative model with two output modalities.</h4>
+        </figcaption>
+</figure>
+
+<p>For this model, the joint distribution can be factored like so:</p>
+<p>$$
+p(y_1,y_2,x) \ = \ p(y_1|x) p(y_2|x) p(x).
+$$</p>
+<p>If we can infer the posterior probability $p(x|y_1,y_2)$, then we have a means to data integration since the latent variable $x$ serves as a shared representation of the two modalities. The inference problem can be straightforward or impossible depending on the choice of conditional distributions above. Ideally, we want these conditionals to be as flexible as possible in order to capture complex data like images, audio, and video.</p>
+<p>Neural networks are a great choice here. For continuous inputs, we can design neural nets $f_1(x; \theta)$ and $f_2(x; \theta)$ whose outputs are the parameters of the conditional distributions $p(y_1|x)$ and $p(y_2|x)$ respectively (which could be Gaussian for example). For discrete inputs, the networks could simply output a vector of probabilities serving as the parameters of a categorical distribution. For the prior probability $p(x)$, we will choose a simple zero-mean Gaussian distribution with identity covariance (but this is not a restriction). Note that $\theta$ denotes the set of internal parameters of the two neural networks, and is separate from the distribution parameters.</p>
+<p>While this is a great, flexible modeling choice, it complicates the inference. We will rely on variational methods in addition to a few clever tricks to make inferring the (approximate) posterior work. If you don&rsquo;t already know about variational autoencoders, I recommend reading my <a href="/posts/vae/">previous post</a> first, or alternatively the original paper can be found <a href="https://arxiv.org/abs/1312.6114">here</a>.</p>
+<h3 id="variational-inference">Variational Inference</h3>
+<p>To make inference work, we need to consider three possibilities. The first is that we observe both modalities in which case we introduce the variational distribution $q(x|y_1,y_2)$ which will approximate the true posterior. This distribution can also be parameterized by a neural network, similar to the model parameterizations above. For example, it could be Gaussian with mean and covariance being the output of a neural network $f(y_1,y_2;\phi)$, where $\phi$ is the set of internal parameters of the neural net. And so, a lowerbound on the log-likelihood can be constructed using Jensen&rsquo;s inequality:</p>
+
+$$
+\begin{aligned}
+\log p(y_1, y_2) \ &= \ \log \mathbb{E}_{q(x|y_1,y_2)} \bigg[ \frac{p(y_1, y_2, x)}{q(x|y_1,y_2)} \bigg] \\[10pt]
+&\geq \mathbb{E}_{q(x|y_1,y_2)} \Big[ \log \big(p(y_1|x) p(y_2|x) p(x)\big) - \log q(x|y_1,y_2) \Big] \\[10pt] 
+&= \ \mathbb{E}_{q(x|y_1,y_2)} [\log p(y_1|x) + \log p(y_2|x)] - \text{KL}[q(x|y_1,y_2)||p(x)].
+\end{aligned}
+$$
+
+<p>The goal is to maximize this lowerbound with respect to the internal parameters of the model and variational neural networks ($\theta$ and $\phi$). This will result in tightening the lowerbound on the log-likelihood. The first term in the last line is the reconstruction error and the KL-divergence term is a kind of regularizer, penalizing an overly complex variational distribution, since $p(x)$ is a simple, zero-mean Gaussian.</p>
+<p>The second and third possibilities constitute the settings where one of the two modalities is missing, i.e. the unpaired data scenario. In this case, our loss function simplifies to the standard variational autoencoder loss function. If $y_2$ is missing, then we maximize the following objective:</p>
+
+$$
+\mathbb{E}_{q(x|y_1)} [\log p(y_1|x)] - \text{KL}[q(x|y_1)||p(x)].
+$$
+
+<p>Similarly, if $y_1$ is missing, we maximize:</p>
+
+$$
+\mathbb{E}_{q(x|y_2)} [\log p(y_2|x)] - \text{KL}[q(x|y_2)||p(x)].
+$$
+
+<p>Here we have introduced two more variational distributions, $q(x|y_1)$ and $q(x|y_2)$, again parameterized by neural networks. The idea is to jointly train the model by selectively applying the objective which corresponds to each of the 3 scenarios we may encounter in the data. Of course, we cannot directly optimize these objectives and will require the reparameterization trick to make backpropagation tractable (see <a href="/posts/vae/">here</a>).</p>
+<h3 id="semi-supervised-learning">Semi-Supervised Learning</h3>
+<p>One disadvantage of this approach is that each of the 3 objectives is independently training a separate variational distribution. The problem is that we only have a few paired examples to train the joint case, $q(x|y_1,y_2)$. In order to successfully make this work in a semi-supervised setting, we need to leverage what we&rsquo;re learning from the other two variational distributions. We can approach this by sharing the internal parameters of the three variational neural networks. This should be straightforward to implement and is an effective strategy for providing the shared representation $q(x|y_1,y_2)$ with much more data.</p>
+<p>We could also devise a more principled approach. Consider the following rearrangement of the intractable true posterior via a repeated application of Bayes rule:</p>
+
+$$
+\begin{aligned}
+p(x|y_1,y_2) \ &= \ \frac{p(y_1|x) p(y_2|x) p(x)}{p(y_1, y_2)} \\
+&= \ \frac{p(x|y_1)p(y_1) p(x|y_2) p(y_2) p(x)}{p(x)^2 p(y_1, y_2)} \\
+&\propto \ \frac{p(x|y_1) p(x|y_2)}{p(x)}.
+\end{aligned}
+$$
+
+<p>This suggests that the joint variational distribution follows the same relationship:</p>
+
+$$
+q(x|y_1,y_2) \ \propto \ \frac{q(x|y_1)q(x|y_2)}{p(x)}.
+$$
+
+<p>Now suppose that each of $q(x|y_1)$, $q(x|y_2)$, and $p(x)$ are Gaussian. This makes the quantity $q(x|y_1)q(x|y_2) / p(x)$ an unnormalized Gaussian density (see <a href="http://davmre.github.io/blog/statistics/2015/03/27/gaussian_quotient">here</a>, which in turn makes $q(x|y_1,y_2)$ a Gaussian density. What this means is that we no longer need a separate neural network to parameterize $q(x|y_1,y_2)$. We can simply use the means and covariances of the two variational distributions $q(x|y_1)$ and $q(x|y_2)$ to deterministically compute the mean and covariance parameters of $q(x|y_1,y_2)$. This is in effect another more principled way of sharing neural net parameters between the variational distributions, and allows us to learn in a semi-supervised setting.</p>
+<h3 id="unsupervised-learning">Unsupervised Learning</h3>
+<p>What if we have no paired data at all? Can we still learn a shared representation? Well the previous semi-supervised approach already allows for this since the shared distribution $q(x|y_1,y_2)$ does not contain any parameters to be learned. We simply train the unpaired data to learn the two unimodal variational distributions $q(x|y_1)$ and $q(x|y_2)$ (assuming they&rsquo;re Gaussian), and use their means and covariances to compute the mean and covariance of the joint $q(x|y_1,y_2)$. But of course, even a little bit of paired data would be tremendously helpful in better aligning the shared representation across the two modalities.</p>
+<h3 id="more-than-two-modalities">More than Two Modalities</h3>
+<p>So far we&rsquo;ve discussed integrating two modalities. How do we extend this to the general case of learning a shared representation from $N$ modalities? The naive approach will not scale well because the number of variational distributions we must keep track of grows proportional to $2^N$. We can take the approach suggested in <a href="https://arxiv.org/abs/1802.05335">Wu and Goodman (2018)</a>, where we again repeatedly apply Bayes rule to rearrange the posterior:</p>
+
+$$
+\begin{aligned}
+p(x|y_1,\ldots,y_N) \ &= \ \frac{p(y_1,\ldots,y_N|x)p(x)}{p(y_1,\ldots,y_N)} \ = \ \frac{p(x)}{p(y_1,\ldots,y_N)} \prod_{i=1}^N p(y_i|x) \\[10pt]
+&= \ \frac{p(x)}{p(y_1,\ldots,y_N)} \prod_{i=1}^N \frac{p(x|y_i)p(y_i)}{p(x)} \ = \ \frac{\prod_{i=1}^N p(x|y_i)}{p(x)^{N-1}} \cdot \frac{\prod_{i=1}^N p(y_i)}{p(y_1, \ldots, y_N)} \\[10pt]
+&\propto \ \frac{\prod_{i=1}^N p(x|y_i)}{p(x)^{N-1}}.
+\end{aligned}
+$$
+
+<p>Again, this suggests that we have the following relationship for the variational approximation:</p>
+
+$$
+q(x|y_1,\ldots,y_N) \ \propto \ \frac{\prod_{i=1}^N q(x|y_i)}{p(x)^{N-1}}.
+$$
+
+<p>This means that we may only need to keep track of $N$ variational distributions in order to compute the shared $q(x|y_1,\ldots,y_N)$, which is a drastic improvement in scalability. Computing the shared variational distribution is not possible in the general case, but we can make it tractable if each of the unimodal $q(x|y_i)$ for $i \in {1,\ldots,N}$ is Gaussian (as previously described). Additionally, note that we can compute any one the $2^N$ possible variational distributions solely using the unimodal components.</p>
+<h3 id="final-remarks">Final Remarks</h3>
+<p>If you&rsquo;d like to know more about multimodal generative models, please take a look at my <a href="/docs/thesis.pdf">master&rsquo;s thesis</a>. You can also find an example <a href="/projects/multimodal_example/">here</a> describing an implementation using a dataset of paired images. If you&rsquo;d like to see code examples in Tensorflow, please have a look at <a href="https://github.com/punit-haria/multimodal-learning/tree/master/code/models">this repository</a>.</p>
+
+      
+      <div class="related">
+</div>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://github.com/punit-haria">Punit Shah</a> 2017</p>
+    
+      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    
+  </div>
+</section>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-187493056-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+</body>
+</html>
+
