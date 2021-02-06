@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on ML is just Stats ;)</title>
+    <title>Posts on PS Musing</title>
     <link>https://punit-haria.github.io/posts/</link>
-    <description>Recent content in Posts on ML is just Stats ;)</description>
+    <description>Recent content in Posts on PS Musing</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/punit-haria&#34;&gt;Punit Shah&lt;/a&gt; 2017</copyright>
@@ -14,7 +14,8 @@
       <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://punit-haria.github.io/posts/multimodal_example/</guid>
-      <description>In the previous post, I described the general multimodal learning problem and how one could approach it using deep generative models. I also detailed the semi-supervised and unsupervised versions of the problem, and as well as a method for scaling the approach to more than 2 modalities. In this post, the focus is on illustrating these ideas and applying them to an image dataset. This example is based on my master&amp;rsquo;s thesis, which will provide greater detail on the multimodal learning problem.</description>
+      <description>Previously, I described the general multimodal learning problem, outlined semi-supervised and unsupervised versions of the problem, and how one could approach them using deep generative models. The focus here is on illustrating these ideas with an example.
+Colored MNIST The toy dataset we use in our experiments is built by taking deterministic transforms of MNIST to craft two separate modalities. For the first group, we paint each digit randomly using one of three colours, and for the second group, we apply a Sobel filter to extract an edge map of each digit and then paint each digit using one of three colours.</description>
     </item>
     
     <item>
@@ -23,7 +24,7 @@
       <pubDate>Tue, 24 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://punit-haria.github.io/posts/multimodal/</guid>
-      <description>Animals use their many sensory organs in beautiful synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in a multitude of forms. Integrating data from multiple modalities is vital to many sectors, especially healthcare, where electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to doctors&#39; notes.</description>
+      <description>Animals use their different sensory organs in synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in many forms. For example, in healthcare, electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to adhoc doctors&#39; notes. There are many approaches to integrating data: we could concatenate different modalities in an end-to-end learning pipeline, or we can train separate learners on each modality and later fuse them via voting or averaging, or we can do some combination thereof.</description>
     </item>
     
     <item>
@@ -32,7 +33,7 @@
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://punit-haria.github.io/posts/vae/</guid>
-      <description>In the previous post, I detailed how linear Gaussian models provide a unified perspective for a host of unsupervised learning methods. The fundamental commonality across these models is the linear relationship between the observed and latent (or hidden) variables. But when working with high-dimensional, composite data (e.g. natural images, video, language), we&amp;rsquo;d rather not restrict ourselves to a linear model. Instead, we want a model that can capture complex interactions between the observation and latent space.</description>
+      <description>A previous post described how the linear Gaussian model provides a unified perspective for a host of unsupervised learning methods. The commonality across these methods is the linear relationship between the observed and latent (or hidden) variables. But when working with high-dimensional, composite data (e.g. natural images, video, language), we&amp;rsquo;d rather not restrict ourselves to a linear model. Instead, we want a model that can capture complex interactions between the observation and latent space.</description>
     </item>
     
     <item>
@@ -45,13 +46,12 @@
     </item>
     
     <item>
-      <title>Linear Models</title>
+      <title>Linear Gaussian Models</title>
       <link>https://punit-haria.github.io/posts/linear-models/</link>
       <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://punit-haria.github.io/posts/linear-models/</guid>
-      <description>Several methods for unsupervised learning have seen ubiquitous use, past and present, across many scientific communities. These include factor analysis, principal component analysis (PCA), Gaussian mixture models, vector quantization, Kalman filters, and hidden Markov models (HMMs). In this post, I outline how these methods can be unified into a single framework, as is shown in the classic Roweis and Ghahramani (1999) paper.
-Factor analysis is a method for explaining the variance among observations using a smaller set of unobserved (or latent) factors.</description>
+      <description>One set of unsupervised methods has stood the test of time, having widespread use across many fields: factor analysis, principal component analysis (PCA), Gaussian mixture models, vector quantization, Kalman filters, and hidden Markov models (HMMs). Factor analysis tries to explain the variance among observations using a smaller set of unobserved (or latent) factors. It&amp;rsquo;s applicability is far-reaching, with examples in psychometrics, microbiology, and marketing. PCA transforms a set of observations into a smaller set of uncorrelated variables, usually being the go-to first step in dimensionality reduction for most datasets.</description>
     </item>
     
     <item>
@@ -60,8 +60,8 @@ Factor analysis is a method for explaining the variance among observations using
       <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://punit-haria.github.io/posts/about/</guid>
-      <description>Hi! My name is Punit, and I am a PhD student at the University of Toronto. I&amp;rsquo;m interested in machine learning for relational, sequential, and multimodal data, and more generally probabilistic inference and deep learning. Previously, I completed a MSc in machine learning at University College London, and a BSc in computer science and statistics at the University of British Columbia. I&amp;rsquo;m from Nairobi, Kenya.
-In this space, I&amp;rsquo;d like to wholeheartedly explore and ruminate on classical and state-of-the-art concepts in statistical machine learning.</description>
+      <description>Hi! My name is Punit. I&amp;rsquo;m interested in many aspects of machine learning and statistics, some of which are variational inference, multimodality, and reinforcement learning. Here, I&amp;rsquo;d like to explore different concepts through writing with the aim of separating what I know from what I think I know.
+ </description>
     </item>
     
   </channel>

@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Multimodal Learning | ML is just Stats ;)</title>
+<title>Multimodal Learning | PS Musing</title>
 
-<meta property='og:title' content='Multimodal Learning - ML is just Stats ;)'>
-<meta property='og:description' content='Animals use their many sensory organs in beautiful synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in a multitude of forms. Integrating data from multiple modalities is vital to many sectors, especially healthcare, where electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to doctors&#39; notes.'>
+<meta property='og:title' content='Multimodal Learning - PS Musing'>
+<meta property='og:description' content='Animals use their different sensory organs in synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in many forms. For example, in healthcare, electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to adhoc doctors&#39; notes. There are many approaches to integrating data: we could concatenate different modalities in an end-to-end learning pipeline, or we can train separate learners on each modality and later fuse them via voting or averaging, or we can do some combination thereof.'>
 <meta property='og:url' content='https://punit-haria.github.io/posts/multimodal/'>
-<meta property='og:site_name' content='ML is just Stats ;)'>
-<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/76d14f306d44ac5c6b2d010fef6889ce?s=256'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2018-04-24T00:00:00Z'><meta property='article:modified_time' content='2018-04-24T00:00:00Z'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@twitter'><meta name='twitter:creator' content='@twitter'>
+<meta property='og:site_name' content='PS Musing'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/76d14f306d44ac5c6b2d010fef6889ce?s=256'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2018-04-24T00:00:00Z'><meta property='article:modified_time' content='2018-04-24T00:00:00Z'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@sh_punit'><meta name='twitter:creator' content='@sh_punit'>
 
 
-<link href="https://punit-haria.github.io/index.xml" rel="alternate" type="application/rss+xml" title="ML is just Stats ;)">
+<link href="https://punit-haria.github.io/index.xml" rel="alternate" type="application/rss+xml" title="PS Musing">
 
 <link rel="stylesheet" href="/css/style.css"><link rel='stylesheet' href='https://punit-haria.github.io/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -31,7 +31,7 @@
     <nav id="nav-main" class="nav">
       <div id="nav-name" class="nav-left">
         <a id="nav-anchor" class="nav-item" href="https://punit-haria.github.io/">
-          <h1 id="nav-heading" class="title is-4">ML is just Stats ;)</h1>
+          <h1 id="nav-heading" class="title is-4">PS Musing</h1>
         </a>
       </div>
       <div class="nav-right">
@@ -44,7 +44,7 @@
     
   </svg></i>
             </span>
-          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/twitter'
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/sh_punit'
             target='_blank' rel='noopener'>
             <span class="icon">
               <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
@@ -94,12 +94,12 @@
     <h1 class="title">Multimodal Learning</h1>
     
     <div class="content">
-      <p>Animals use their many sensory organs in beautiful synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in a multitude of forms. Integrating data from multiple modalities is vital to many sectors, especially healthcare, where electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to doctors' notes. Analogous problems exist for enterprises, financial institutions, and government, to name a few. There are many approaches to integrating data. We can concatenate different modalities into an end-to-end learning algorithm, or we can train separate learners on each modality and later integrate them via voting/averaging, or we can do some combination thereof.</p>
+      <p>Animals use their different sensory organs in synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in many forms. For example, in healthcare, electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to adhoc doctors' notes. There are many approaches to integrating data: we could concatenate different modalities in an end-to-end learning pipeline, or we can train separate learners on each modality and later fuse them via voting or averaging, or we can do some combination thereof.</p>
 <p>But in many settings, each modality has very distinct statistical properties and integrating them together isn&rsquo;t trivial. <a href="https://dl.acm.org/citation.cfm?id=3104569">Ngiam et al. (2011)</a> elucidate this point quite well. They describe how audio and video data for speech recognition is typically correlated at the level of phonemes and visemes, meaning that relating raw pixels to audio waveforms or spectograms is not straightforward. In response to this problem, they propose a deep autoencoder model for creating a shared representation of audio-video data, and they demonstrate how this representation improves performance on a variety of tasks. Another example is <a href="https://papers.nips.cc/paper/5204-devise-a-deep-visual-semantic-embedding-model">Frome et al. (2013)</a> where dense representations of textual data are created using a neural language model, and another neural network is then trained to learn the mapping from images to text labels in this embedding space. This approach in effect creates a shared representation for image and text modalities.</p>
-<p><a href="http://jmlr.org/papers/v15/srivastava14b.html">Srivastava and Salakhutdinov (2012)</a> approach the multimodal learning problem using a generative model, specifically the deep Boltzmann machine. They apply their model to image-text data as well as audio-video data, and evaluate the quality of their shared representations on information retrieval and classification tasks. They demonstrate improvements over the previously proposed deep autoencoder-based methods. One key advantage of their approach is the use of a generative model, which means that missing data can naturally be dealt with.</p>
+<p><a href="http://jmlr.org/papers/v15/srivastava14b.html">Srivastava and Salakhutdinov (2012)</a> approach the multimodal learning problem using a generative model (specifically a deep Boltzmann machine). They apply their model to image-text data as well as audio-video data, and evaluate the quality of their shared representations on information retrieval and classification tasks. They demonstrate improvements over the previously proposed deep autoencoder-based methods. One key advantage of their approach is the use of a generative model, which means that missing data can naturally be dealt with.</p>
 <h3 id="generative-modeling">Generative Modeling</h3>
-<p>Suppose we have two modalities we&rsquo;d like to integrate together for downstream decision making, e.g. prediction, outlier detection, etc. Further suppose that aligning or pairing the inputs is expensive, meaning we only have a few hundred paired examples of the two modalities, and a plethora of unpaired data (the cost of pairing data can become very expensive in many cases). We would prefer to make the best of the few paired examples we have, while also utilizing the vast amounts of unpaired data.</p>
-<p>We can use a generative model to approach this semi-supervised learning problem in order to handle the missingness (lack of pairings) in our data. In the simplest case, we introduce a single latent variable which will play a key role in generating the two observed modalities. This results in the model visualized below in graphical notation, where $y_1$ and $y_2$ are the two inputs, and $x$ is the latent variable.</p>
+<p>Suppose we have two modalities we&rsquo;d like to integrate together for downstream decision making, e.g. prediction, outlier detection, etc. Further suppose that aligning or pairing the inputs is expensive, meaning we only have a few hundred paired examples of the two modalities, and a plethora of unpaired data (the cost of pairing data can be very expensive in many cases). We would prefer to make the best of the few paired examples we have, while also utilizing the vast amounts of unpaired data.</p>
+<p>We can use a generative model to approach this <em>semi-supervised</em> learning problem in order to handle the missingness (lack of pairings) in our data. In the simplest case, we introduce a single latent variable $x$ which will play a key role in generating the two observed modalities, $y_1$ and $y_2$:</p>
 <figure class="center">
     <img src="/img/multimodal/multimodal_vae.png" width="20%"/> <figcaption>
             <h4>Generative model with two output modalities.</h4>
@@ -111,10 +111,10 @@
 p(y_1,y_2,x) \ = \ p(y_1|x) p(y_2|x) p(x).
 $$</p>
 <p>If we can infer the posterior probability $p(x|y_1,y_2)$, then we have a means to data integration since the latent variable $x$ serves as a shared representation of the two modalities. The inference problem can be straightforward or impossible depending on the choice of conditional distributions above. Ideally, we want these conditionals to be as flexible as possible in order to capture complex data like images, audio, and video.</p>
-<p>Neural networks are a great choice here. For continuous inputs, we can design neural nets $f_1(x; \theta)$ and $f_2(x; \theta)$ whose outputs are the parameters of the conditional distributions $p(y_1|x)$ and $p(y_2|x)$ respectively (which could be Gaussian for example). For discrete inputs, the networks could simply output a vector of probabilities serving as the parameters of a categorical distribution. For the prior probability $p(x)$, we will choose a simple zero-mean Gaussian distribution with identity covariance (but this is not a restriction). Note that $\theta$ denotes the set of internal parameters of the two neural networks, and is separate from the distribution parameters.</p>
-<p>While this is a great, flexible modeling choice, it complicates the inference. We will rely on variational methods in addition to a few clever tricks to make inferring the (approximate) posterior work. If you don&rsquo;t already know about variational autoencoders, I recommend reading my <a href="/posts/vae/">previous post</a> first, or alternatively the original paper can be found <a href="https://arxiv.org/abs/1312.6114">here</a>.</p>
+<p>For continuous inputs, we can design neural nets $f_1(x; \theta)$ and $f_2(x; \theta)$ whose outputs are the parameters of the conditional distributions $p(y_1|x)$ and $p(y_2|x)$ respectively. For discrete inputs, the networks could simply output a vector of probabilities serving as the parameters of a categorical distribution. For the prior probability $p(x)$, we will choose a simple zero-mean Gaussian distribution with identity covariance (but this is not a restriction). Note that $\theta$ denotes the set of internal parameters of the two neural networks, and is separate from the distribution parameters.</p>
+<p>While this is a great, flexible modeling choice, it complicates the inference. We will rely on variational methods in addition to a few clever tricks to make inferring the (approximate) posterior work.</p>
 <h3 id="variational-inference">Variational Inference</h3>
-<p>To make inference work, we need to consider three possibilities. The first is that we observe both modalities in which case we introduce the variational distribution $q(x|y_1,y_2)$ which will approximate the true posterior. This distribution can also be parameterized by a neural network, similar to the model parameterizations above. For example, it could be Gaussian with mean and covariance being the output of a neural network $f(y_1,y_2;\phi)$, where $\phi$ is the set of internal parameters of the neural net. And so, a lowerbound on the log-likelihood can be constructed using Jensen&rsquo;s inequality:</p>
+<p>To make inference work, we need to consider three possibilities. The first is that we observe both modalities in which case we introduce the variational distribution $q(x|y_1,y_2)$ which will approximate the true posterior. This distribution can also be parameterized by a neural network, similar to the model parameterizations above. For example, it could be Gaussian with mean and covariance being the output of a neural network $f(y_1,y_2;\phi)$ with parameters $\phi$. A lowerbound on the log-likelihood can be constructed using Jensen&rsquo;s inequality:</p>
 
 $$
 \begin{aligned}
@@ -137,7 +137,7 @@ $$
 \mathbb{E}_{q(x|y_2)} [\log p(y_2|x)] - \text{KL}[q(x|y_2)||p(x)].
 $$
 
-<p>Here we have introduced two more variational distributions, $q(x|y_1)$ and $q(x|y_2)$, again parameterized by neural networks. The idea is to jointly train the model by selectively applying the objective which corresponds to each of the 3 scenarios we may encounter in the data. Of course, we cannot directly optimize these objectives and will require the reparameterization trick to make backpropagation tractable (see <a href="/posts/vae/">here</a>).</p>
+<p>Here we have introduced two more variational distributions, $q(x|y_1)$ and $q(x|y_2)$, again parameterized by neural networks. The idea is to jointly train the model by selectively applying the objective which corresponds to each of the 3 scenarios we may encounter in the data. Of course, we cannot directly optimize these objectives and will require the reparameterization trick to make backpropagation tractable (<a href="/posts/vae/">previous post</a>).</p>
 <h3 id="semi-supervised-learning">Semi-Supervised Learning</h3>
 <p>One disadvantage of this approach is that each of the 3 objectives is independently training a separate variational distribution. The problem is that we only have a few paired examples to train the joint case, $q(x|y_1,y_2)$. In order to successfully make this work in a semi-supervised setting, we need to leverage what we&rsquo;re learning from the other two variational distributions. We can approach this by sharing the internal parameters of the three variational neural networks. This should be straightforward to implement and is an effective strategy for providing the shared representation $q(x|y_1,y_2)$ with much more data.</p>
 <p>We could also devise a more principled approach. Consider the following rearrangement of the intractable true posterior via a repeated application of Bayes rule:</p>
@@ -156,7 +156,7 @@ $$
 q(x|y_1,y_2) \ \propto \ \frac{q(x|y_1)q(x|y_2)}{p(x)}.
 $$
 
-<p>Now suppose that each of $q(x|y_1)$, $q(x|y_2)$, and $p(x)$ are Gaussian. This makes the quantity $q(x|y_1)q(x|y_2) / p(x)$ an unnormalized Gaussian density (see <a href="http://davmre.github.io/blog/statistics/2015/03/27/gaussian_quotient">here</a>, which in turn makes $q(x|y_1,y_2)$ a Gaussian density. What this means is that we no longer need a separate neural network to parameterize $q(x|y_1,y_2)$. We can simply use the means and covariances of the two variational distributions $q(x|y_1)$ and $q(x|y_2)$ to deterministically compute the mean and covariance parameters of $q(x|y_1,y_2)$. This is in effect another more principled way of sharing neural net parameters between the variational distributions, and allows us to learn in a semi-supervised setting.</p>
+<p>Now suppose that each of $q(x|y_1)$, $q(x|y_2)$, and $p(x)$ are Gaussian. This makes the quantity $q(x|y_1)q(x|y_2) / p(x)$ an unnormalized Gaussian density (see <a href="http://davmre.github.io/blog/statistics/2015/03/27/gaussian_quotient">here</a>), which in turn makes $q(x|y_1,y_2)$ a Gaussian density. What this means is that we no longer need a separate neural network to parameterize $q(x|y_1,y_2)$. We can simply use the means and covariances of the two variational distributions $q(x|y_1)$ and $q(x|y_2)$ to deterministically compute the mean and covariance parameters of $q(x|y_1,y_2)$. This is in effect another more principled way of sharing neural net parameters between the variational distributions, and allows us to learn in a semi-supervised setting.</p>
 <h3 id="unsupervised-learning">Unsupervised Learning</h3>
 <p>What if we have no paired data at all? Can we still learn a shared representation? Well the previous semi-supervised approach already allows for this since the shared distribution $q(x|y_1,y_2)$ does not contain any parameters to be learned. We simply train the unpaired data to learn the two unimodal variational distributions $q(x|y_1)$ and $q(x|y_2)$ (assuming they&rsquo;re Gaussian), and use their means and covariances to compute the mean and covariance of the joint $q(x|y_1,y_2)$. But of course, even a little bit of paired data would be tremendously helpful in better aligning the shared representation across the two modalities.</p>
 <h3 id="more-than-two-modalities">More than Two Modalities</h3>
@@ -176,9 +176,9 @@ $$
 q(x|y_1,\ldots,y_N) \ \propto \ \frac{\prod_{i=1}^N q(x|y_i)}{p(x)^{N-1}}.
 $$
 
-<p>This means that we may only need to keep track of $N$ variational distributions in order to compute the shared $q(x|y_1,\ldots,y_N)$, which is a drastic improvement in scalability. Computing the shared variational distribution is not possible in the general case, but we can make it tractable if each of the unimodal $q(x|y_i)$ for $i \in {1,\ldots,N}$ is Gaussian (as previously described). Additionally, note that we can compute any one the $2^N$ possible variational distributions solely using the unimodal components.</p>
-<h3 id="final-remarks">Final Remarks</h3>
-<p>If you&rsquo;d like to know more about multimodal generative models, please take a look at my <a href="/docs/thesis.pdf">master&rsquo;s thesis</a>. You can also find an example <a href="/projects/multimodal_example/">here</a> describing an implementation using a dataset of paired images. If you&rsquo;d like to see code examples in Tensorflow, please have a look at <a href="https://github.com/punit-haria/multimodal-learning/tree/master/code/models">this repository</a>.</p>
+<p>This means that we may only need to keep track of $N$ variational distributions in order to compute the shared $q(x|y_1,\ldots,y_N)$, which is a drastic improvement in scalability. Computing the shared variational distribution is not possible in the general case, but we can make it tractable if each of the unimodal $q(x|y_i)$ for $i \in {1,\ldots,N}$ is Gaussian. Note that we can compute any one the $2^N$ possible variational distributions solely using the unimodal components.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>If you&rsquo;d like to know more, please take a look at my <a href="/docs/thesis.pdf">master&rsquo;s thesis</a>. Here is an <a href="/posts/multimodal_example/">example</a> using a dataset of paired images, with implementations <a href="https://github.com/punit-haria/multimodal-learning/tree/master/code/models">here</a>.</p>
 
       
       <div class="related">

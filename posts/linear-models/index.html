@@ -4,17 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Linear Models | ML is just Stats ;)</title>
+<title>Linear Gaussian Models | PS Musing</title>
 
-<meta property='og:title' content='Linear Models - ML is just Stats ;)'>
-<meta property='og:description' content='Several methods for unsupervised learning have seen ubiquitous use, past and present, across many scientific communities. These include factor analysis, principal component analysis (PCA), Gaussian mixture models, vector quantization, Kalman filters, and hidden Markov models (HMMs). In this post, I outline how these methods can be unified into a single framework, as is shown in the classic Roweis and Ghahramani (1999) paper.
-Factor analysis is a method for explaining the variance among observations using a smaller set of unobserved (or latent) factors.'>
+<meta property='og:title' content='Linear Gaussian Models - PS Musing'>
+<meta property='og:description' content='One set of unsupervised methods has stood the test of time, having widespread use across many fields: factor analysis, principal component analysis (PCA), Gaussian mixture models, vector quantization, Kalman filters, and hidden Markov models (HMMs). Factor analysis tries to explain the variance among observations using a smaller set of unobserved (or latent) factors. It&rsquo;s applicability is far-reaching, with examples in psychometrics, microbiology, and marketing. PCA transforms a set of observations into a smaller set of uncorrelated variables, usually being the go-to first step in dimensionality reduction for most datasets.'>
 <meta property='og:url' content='https://punit-haria.github.io/posts/linear-models/'>
-<meta property='og:site_name' content='ML is just Stats ;)'>
-<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/76d14f306d44ac5c6b2d010fef6889ce?s=256'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2017-11-17T00:00:00Z'><meta property='article:modified_time' content='2017-11-17T00:00:00Z'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@twitter'><meta name='twitter:creator' content='@twitter'>
+<meta property='og:site_name' content='PS Musing'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/76d14f306d44ac5c6b2d010fef6889ce?s=256'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2017-11-17T00:00:00Z'><meta property='article:modified_time' content='2017-11-17T00:00:00Z'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@sh_punit'><meta name='twitter:creator' content='@sh_punit'>
 
 
-<link href="https://punit-haria.github.io/index.xml" rel="alternate" type="application/rss+xml" title="ML is just Stats ;)">
+<link href="https://punit-haria.github.io/index.xml" rel="alternate" type="application/rss+xml" title="PS Musing">
 
 <link rel="stylesheet" href="/css/style.css"><link rel='stylesheet' href='https://punit-haria.github.io/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -32,7 +31,7 @@ Factor analysis is a method for explaining the variance among observations using
     <nav id="nav-main" class="nav">
       <div id="nav-name" class="nav-left">
         <a id="nav-anchor" class="nav-item" href="https://punit-haria.github.io/">
-          <h1 id="nav-heading" class="title is-4">ML is just Stats ;)</h1>
+          <h1 id="nav-heading" class="title is-4">PS Musing</h1>
         </a>
       </div>
       <div class="nav-right">
@@ -45,7 +44,7 @@ Factor analysis is a method for explaining the variance among observations using
     
   </svg></i>
             </span>
-          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/twitter'
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/sh_punit'
             target='_blank' rel='noopener'>
             <span class="icon">
               <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
@@ -92,20 +91,19 @@ Factor analysis is a method for explaining the variance among observations using
       
     </div>
     <h2 class="subtitle is-6">November 17, 2017</h2>
-    <h1 class="title">Linear Models</h1>
+    <h1 class="title">Linear Gaussian Models</h1>
     
     <div class="content">
-      <p>Several methods for unsupervised learning have seen ubiquitous use, past and present, across many scientific communities. These include factor analysis, principal component analysis (PCA), Gaussian mixture models, vector quantization, Kalman filters, and hidden Markov models (HMMs). In this post, I outline how these methods can be unified into a single framework, as is shown in the classic <a href="https://doi.org/10.1162/089976699300016674">Roweis and Ghahramani (1999)</a> paper.</p>
-<p>Factor analysis is a method for explaining the variance among observations using a smaller set of unobserved (or latent) factors. It is often used in the fields of psychology, finance, and biology, and a noteworthy example is its use in determining the <a href="https://en.wikipedia.org/wiki/Big_Five_personality_traits">Big Five personality traits</a>. It has also been used to better understand human intelligence. The PCA algorithm is a related method for transforming a set of observations into a smaller set of uncorrelated variables. It sees widespread use in a variety of fields as the go-to dimensionality reduction method. Similarly, Kalman filter models and HMMs are ubiquitous in the signal processing, econometrics, and speech recognition communities. What all of these models and methods have in common, is that they relate a set of observations to another set of hidden variables. They have all proven to be significant ideas, showing wide applicability in a diverse range of fields.</p>
-<p>Now this post is about using a single lens to view all of these methods. But first you might ask, why bother? One critical reason for drawing connections between these methods is to create a common language between the various scientific communities, and to encourage cross-disciplinary collaboration. The perspective consolidated and offered by Roweis and Ghahramani in their 1999 paper is a top-down look at how these methods are formed and how they relate to each other.</p>
+      <p>One set of unsupervised methods has stood the test of time, having widespread use across many fields: factor analysis, principal component analysis (PCA), Gaussian mixture models, vector quantization, Kalman filters, and hidden Markov models (HMMs). Factor analysis tries to explain the variance among observations using a smaller set of unobserved (or latent) factors. It&rsquo;s applicability is far-reaching, with examples in <a href="https://en.wikipedia.org/wiki/Big_Five_personality_traits">psychometrics</a>, <a href="https://www.embopress.org/doi/full/10.15252/msb.20178124">microbiology</a>, and <a href="https://www.emerald.com/insight/content/doi/10.1108/17515631111114877/full/html?mobileUi=0&amp;fullSc=1&amp;fullSc=1&amp;mbSc=1">marketing</a>. PCA transforms a set of observations into a smaller set of uncorrelated variables, usually being the go-to first step in dimensionality reduction for most datasets. Kalman filters and HMMs are models for sequential data, broadly used in signal processing, econometrics, and speech recognition.</p>
+<p>Each of the above methods tries to formulate a linear relationship between a set of observations and another set of hidden variables, but what&rsquo;s really interesting is that they can all be unified under a common framework. This was shown in a classic paper [<a href="https://doi.org/10.1162/089976699300016674">Roweis and Ghahramani, 1999</a>], so while it&rsquo;s nothing new, viewing these methods under the same lens has really helped unify my thinking and reduce the complexity of the unsupervised learning landscape. This framework also provides the basic building blocks for understanding many nonlinear, deep learning-based unsupervised methods.</p>
 <h3 id="the-model">The Model</h3>
-<p>We begin with a discrete-time stochastic process $ \mathbf{x}_t $ which is represented at each timestep with a $k$-dimensional hidden state $ \mathbf{x} = (x_1, \ldots, x_k) $. This process may be describing the value of a financial instrument over time, or the quality of life in an assortment of cities, or the personality traits of a subpopulation of individuals. The central tenet is that the state $\mathbf{x}$ underlies a process that we want to understand, but cannot directly observe. Instead we go out into the world and make measurements ${\mathbf{y}_t}$ which we believe are related in some way to the hidden process we seek. This could be a collection of economic indicators, or questionnaire responses about life satisfaction, or self-reported assessments about personality. The idea is that they are measurable, and let&rsquo;s suppose they are $p$-dimensional: $ \mathbf{y} = (y_1, \ldots, y_p) $.</p>
-<p>Now, how do we relate the observation to the hidden state? As a simple first step, we may assume that this relationship is linear. In statistics and machine learning, the linearity assumption tends to simplify <a href="#inference">inference and learning</a>. In addition, we may assume that the hidden process ${ \mathbf{x}_t }$ is <a href="https://en.wikipedia.org/wiki/Markov_chain">first-order Markovian</a>, meaning the state at each timestep only depends on the state at the previous timestep.</p>
+<p>We begin with a discrete-time stochastic process $ \mathbf{x}_t $ which is represented at each timestep with a $k$-dimensional hidden state $ \mathbf{x} = (x_1, \ldots, x_k) $. This process may be describing the value of a financial instrument over time, or the quality of life in an assortment of cities, or the personality traits of a subpopulation of individuals. The central tenet is that the state $\mathbf{x}$ underlies a process that we want to understand, but cannot directly observe. Instead we go out into the world and make measurements ${\mathbf{y}_t}$ which we believe are related in some way to the hidden process we seek. This could be a collection of economic indicators, or questionnaire responses about life satisfaction, or self-reported assessments about personality. Let each such measurment $\mathbf{y}$ have dimension $p$: $ \mathbf{y} = (y_1, \ldots, y_p) $.</p>
+<p>How do we relate the observation to the hidden state? As a first step, we may assume that this relationship is linear. The main motivation behind this is really for simplifying the algorithms for inference and learning. In addition, we may assume that the hidden process ${ \mathbf{x}_t }$ is <a href="https://en.wikipedia.org/wiki/Markov_chain">first-order Markovian</a>, meaning the state at each timestep only depends on the state at the previous timestep.</p>
 <p>For a continuous-valued state variable $\mathbf{x}$, this means:</p>
 
 $$
 \begin{aligned} 
-\mathbf{x}_{t+1} &= \mathbf{A} \mathbf{x}_t + \mathbf{w}_t \\\\\\ 
+\mathbf{x}_{t+1} &= \mathbf{A} \mathbf{x}_t + \mathbf{w}_t \\ 
 \mathbf{y}_t &= \mathbf{C} \mathbf{x}_t + \mathbf{v}_t  
 \end{aligned}
 $$
@@ -116,10 +114,10 @@ $$
     <img src="/img/linear-gaussian/dynamic_model.png" width="50%"/> 
 </figure>
 
-<p>One final assumption is that the noise processes ${\mathbf{w}_t}$ and ${\mathbf{v}_t}$ are Gaussian-distributed with zero mean, i.e. $\mathbf{w}_t \sim \mathcal{N}(\mathbf{0}, \mathbf{Q})$ and $\mathbf{v}_t \sim \mathcal{N}(\mathbf{0}, \mathbf{R})$. Here $\mathbf{Q}$ and $\mathbf{R}$ are the respective covariance matrices. As with the assumption of linearity, Gaussian noise eases inference and learning in our model. Its use is also justified by the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">central limit theorem</a>.</p>
-<p>What we have just described is known as a <strong>linear Gaussian model</strong>. It is a <em>generative model</em> where the hidden state $\mathbf{x}$ is first sampled from a distribution, and subsequently, the observation $\mathbf{y}$ is sampled from a distribution conditional on $\mathbf{x}$.  We refer to the matrices $\mathbf{A},  \mathbf{C}, \mathbf{Q},$ and $\mathbf{R}$ as the model&rsquo;s parameters. An analytic or algorithmic approach is used to <a href="#inference">learn</a> these parameters from a given set of observations. In the sections which follow, we will show how variations of this model lead to some commonly-used unsupervised learning methods.</p>
+<p>One final assumption is that the noise processes ${\mathbf{w}_t}$ and ${\mathbf{v}_t}$ are Gaussian-distributed with zero mean, i.e. $\mathbf{w}_t \sim \mathcal{N}(\mathbf{0}, \mathbf{Q})$ and $\mathbf{v}_t \sim \mathcal{N}(\mathbf{0}, \mathbf{R})$. Here $\mathbf{Q}$ and $\mathbf{R}$ are the respective covariance matrices. As with the assumption of linearity, Gaussian noise eases inference and learning in our model.</p>
+<p>What we have just described is known as a <strong>linear Gaussian model</strong>. It is a <em>generative model</em> where the hidden state $\mathbf{x}$ is first sampled from a distribution, and subsequently, the observation $\mathbf{y}$ is sampled from a distribution conditional on $\mathbf{x}$.  We refer to the matrices $\mathbf{A},  \mathbf{C}, \mathbf{Q},$ and $\mathbf{R}$ as the model&rsquo;s parameters. An analytic or algorithmic approach is used to learn these parameters from a given set of observations. In the sections which follow, we will show how variations of this model lead to some commonly-used unsupervised learning methods.</p>
 <hr>
-<p><strong>A Few Details:</strong></p>
+<p><strong>Some Details:</strong></p>
 <ul>
 <li>The &ldquo;zero mean&rdquo; assumption on the noise processes does not take away from our model. If we add an extra element to the state vector, fixed at unity, then we can correspondingly add an extra column to the transition matrix which will hold the (non-zero) mean. The same reasoning can be applied to the observation process.</li>
 <li>Setting the covariance matrix $\mathbf{Q}$ to the identity does not take away from our model either. Since $\mathbf{Q}$ is positive semi-definite, we can take its eigendecomposition: $\mathbf{Q}= \mathbf{E}\mathbf{\Lambda}\mathbf{E}^T,$ where $\mathbf{E}$ is the orthogonal matrix of eigenvectors and $\mathbf{\Lambda}$ is the diagonal matrix of eigenvalues. If we redefine our model using a new state variable $\mathbf{x}' = \mathbf{\Lambda}^{-1/2} \mathbf{E}^T \mathbf{x},$ then $\text{Cov}(\mathbf{x}') = \mathbf{\Lambda}^{-1/2} \mathbf{E}^T \text{Cov}(\mathbf{x}) \mathbf{E} \mathbf{\Lambda}^{-1/2} = \mathbf{\Lambda}^{-1/2} \mathbf{E}^T \mathbf{Q} \mathbf{E} \mathbf{\Lambda}^{-1/2}  = \mathbf{I}.$ In this redefined model, the covariance parameter is the identity, and the structure in $\mathbf{Q}$ has moved to the matrices $\mathbf{A}' = \mathbf{A} \mathbf{E} \mathbf{\Lambda}^{1/2}$ and $\mathbf{C}' = \mathbf{C} \mathbf{E} \mathbf{\Lambda}^{1/2}.$</li>
@@ -150,7 +148,7 @@ $$
 $$p(\mathbf{y}_1, \ldots, \mathbf{y}_{\tau}) \ = \ \int_{\mathbf{x}_1, \ldots, \mathbf{x}_{\tau}} p(\mathbf{x}_1, \ldots, \mathbf{x}_{\tau}, \mathbf{y}_1, \ldots, \mathbf{y}_{\tau}) \ d \{ \mathbf{x}_1, \ldots, \mathbf{x}_{\tau} \}$$ 
 
 <p>This integral (or summation in the discrete case) is difficult, and many methods have been devised to solve or circumvent it. In most cases, evaluating the marginal likelihood is the crux of the inference problem.</p>
-<p>The process of <em>learning</em> refers to any method which finds settings of the model parameters that maximize the marginal likelihood over the observed data. There are many approaches to learning, but it is particularly useful to understand the EM algorithm because it forms the basis for many other learning methods. It also provides a joint solution to both the inference and learning problems. I shall defer an explanation of the EM algorithm to a later time, and instead use this article to emphasize the relationships between the various unsupervised learning methods. Nevertheless, <a href="https://doi.org/10.1162/089976699300016674">Roweis and Ghahramani (1999)</a> provide a very clear exposition of the EM algorithm.</p>
+<p>The process of <em>learning</em> refers to any method which finds settings of the model parameters that maximize the marginal likelihood over the observed data. The EM algorithm, described in the <a href="https://doi.org/10.1162/089976699300016674">paper</a>, is as an inference and learning method which can be applied to all of the unsupervised methods mentioned here. It is useful to understand because it also forms the basis for understanding many other methods, including variational inference and belief propagation.</p>
 <h3 id="kalman-filters-and-hmms">Kalman Filters and HMMs</h3>
 <p>In this section, we show how variations of the linear Gaussian model above are equivalent to the Kalman filter (or linear dynamical system) and the hidden Markov model. In fact, the Kalman filter is exactly equivalent to our model specification above. Moreover, we can arrive at the HMM by making the following adjustment to the model:</p>
 
@@ -172,9 +170,9 @@ $$\begin{aligned} \mathbf{x}_{t+1} \ &= \ \text{WTA}[\mathbf{A} \mathbf{x}_t + \
 <p>If we instead restrict $\mathbf{R}$ to be a multiple of the identity matrix, then we have a model known as <em>probabilistic principal component analysis</em>. This model is invariant to rotations of the observed data because the matrix $\mathbf{C}$ can correspondingly be rotated. Scaling the data will be problematic because the observation process has a spherical variance, i.e. scaling one coordinate and not another will result in different solutions to the inference and learning problems. If we take the limit $\mathbf{R} = \text{lim}_{\epsilon \rightarrow 0} \epsilon \mathbf{I}$, then the inference and learning process is equivalent to the standard PCA algorithm!</p>
 <p>The Gaussian mixture model is slightly different because it incorporates a <em>discrete</em> hidden state variable. As before, we can achieve this in our model by making the following modification:</p>
 <p>$$\begin{aligned} \mathbf{x} \ &amp;= \ \text{WTA}[\mathbf{w}] \quad \text{and} \ \mathbf{y} \ &amp;= \ \mathbf{C} \mathbf{x} + \mathbf{v}.  \end{aligned}$$</p>
-<p>Similarly, if we take the limit as the observation noise becomes infinitesimal compared to the scale of the data, we get the standard vector quantization model!</p>
-<h3 id="concluding-remarks">Concluding Remarks</h3>
-<p>In this post, I showed how several variations of the linear Gaussian model are equivalent to classical unsupervised learning techniques like factor analysis, PCA, Gaussian mixtures, vector quantization, Kalman filters, and HMMs. Moreover, learning and inference in most of these models can be approached using the EM algorithm or approximations to it. I will cover this aspect of the discussion in much more detail at a later time, but the paper by Roweis and Ghahramani (1999) provides an in-depth description of the inference and learning procedures.</p>
+<p>Similarly, if we take the limit as the observation noise becomes infinitesimal compared to the scale of the data, we get the standard vector quantization model.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>To summarise, factor analysis, PCA, Gaussian mixtures, vector quantization, Kalman filters, and HMMs can all be viewed as variations of a linear Gaussian model. Learning and inference in most of these models can be approached using the EM algorithm or approximations to it. These ideas are very well described in <a href="https://doi.org/10.1162/089976699300016674">Roweis and Ghahramani, 1999</a>, and while they are not new, they can really help unify one&rsquo;s thinking about a sizable chunk of unsupervised methods. The framework can also help with understanding nonlinear and more recent variations of these methods; for example, the variational autoencoder takes the above static model and replaces the linear relationship with a deep network.</p>
 
       
       <div class="related">

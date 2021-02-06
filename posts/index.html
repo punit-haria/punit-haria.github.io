@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Posts | ML is just Stats ;)</title>
+<title>Posts | PS Musing</title>
 
-<meta property='og:title' content='Posts - ML is just Stats ;)'>
+<meta property='og:title' content='Posts - PS Musing'>
 <meta property='og:description' content=''>
 <meta property='og:url' content='https://punit-haria.github.io/posts/'>
-<meta property='og:site_name' content='ML is just Stats ;)'>
-<meta property='og:type' content='website'><meta property='og:image' content='https://www.gravatar.com/avatar/76d14f306d44ac5c6b2d010fef6889ce?s=256'><meta property='article:section' content='Posts'><meta property='og:updated_time' content='2018-05-15T00:00:00Z'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@twitter'><meta name='twitter:creator' content='@twitter'>
+<meta property='og:site_name' content='PS Musing'>
+<meta property='og:type' content='website'><meta property='og:image' content='https://www.gravatar.com/avatar/76d14f306d44ac5c6b2d010fef6889ce?s=256'><meta property='article:section' content='Posts'><meta property='og:updated_time' content='2018-05-15T00:00:00Z'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@sh_punit'><meta name='twitter:creator' content='@sh_punit'>
 
 
-<link href="https://punit-haria.github.io/index.xml" rel="alternate" type="application/rss+xml" title="ML is just Stats ;)">
+<link href="https://punit-haria.github.io/index.xml" rel="alternate" type="application/rss+xml" title="PS Musing">
 
 <link rel="stylesheet" href="/css/style.css"><link rel='stylesheet' href='https://punit-haria.github.io/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -31,7 +31,7 @@
     <nav id="nav-main" class="nav">
       <div id="nav-name" class="nav-left">
         <a id="nav-anchor" class="nav-item" href="https://punit-haria.github.io/">
-          <h1 id="nav-heading" class="title is-4">ML is just Stats ;)</h1>
+          <h1 id="nav-heading" class="title is-4">PS Musing</h1>
         </a>
       </div>
       <div class="nav-right">
@@ -44,7 +44,7 @@
     
   </svg></i>
             </span>
-          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/twitter'
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/sh_punit'
             target='_blank' rel='noopener'>
             <span class="icon">
               <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
@@ -100,7 +100,8 @@
   
 </a></h1>
       <div class="content">
-        In the previous post, I described the general multimodal learning problem and how one could approach it using deep generative models. I also detailed the semi-supervised and unsupervised versions of the problem, and as well as a method for scaling the approach to more than 2 modalities. In this post, the focus is on illustrating these ideas and applying them to an image dataset. This example is based on my master&rsquo;s thesis, which will provide greater detail on the multimodal learning problem.
+        Previously, I described the general multimodal learning problem, outlined semi-supervised and unsupervised versions of the problem, and how one could approach them using deep generative models. The focus here is on illustrating these ideas with an example.
+Colored MNIST The toy dataset we use in our experiments is built by taking deterministic transforms of MNIST to craft two separate modalities. For the first group, we paint each digit randomly using one of three colours, and for the second group, we apply a Sobel filter to extract an edge map of each digit and then paint each digit using one of three colours.
         
         <a class="button is-link" href="https://punit-haria.github.io/posts/multimodal_example/" style="height:28px">
           Read more
@@ -121,7 +122,7 @@
   
 </a></h1>
       <div class="content">
-        Animals use their many sensory organs in beautiful synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in a multitude of forms. Integrating data from multiple modalities is vital to many sectors, especially healthcare, where electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to doctors' notes.
+        Animals use their different sensory organs in synchrony to learn from and react to the environment. In a similar vein, to build truly intelligent systems, we need to leverage data in many forms. For example, in healthcare, electronic medical records and related patient data can take shape anywhere on the spectrum from medical imaging to high-frequency time series to adhoc doctors' notes. There are many approaches to integrating data: we could concatenate different modalities in an end-to-end learning pipeline, or we can train separate learners on each modality and later fuse them via voting or averaging, or we can do some combination thereof.
         
         <a class="button is-link" href="https://punit-haria.github.io/posts/multimodal/" style="height:28px">
           Read more
@@ -142,7 +143,7 @@
   
 </a></h1>
       <div class="content">
-        In the previous post, I detailed how linear Gaussian models provide a unified perspective for a host of unsupervised learning methods. The fundamental commonality across these models is the linear relationship between the observed and latent (or hidden) variables. But when working with high-dimensional, composite data (e.g. natural images, video, language), we&rsquo;d rather not restrict ourselves to a linear model. Instead, we want a model that can capture complex interactions between the observation and latent space.
+        A previous post described how the linear Gaussian model provides a unified perspective for a host of unsupervised learning methods. The commonality across these methods is the linear relationship between the observed and latent (or hidden) variables. But when working with high-dimensional, composite data (e.g. natural images, video, language), we&rsquo;d rather not restrict ourselves to a linear model. Instead, we want a model that can capture complex interactions between the observation and latent space.
         
         <a class="button is-link" href="https://punit-haria.github.io/posts/vae/" style="height:28px">
           Read more
@@ -177,15 +178,14 @@
         
       </div>
       <h2 class="subtitle is-6 date">November 17, 2017</h2>
-      <h1 class="title"><a href="https://punit-haria.github.io/posts/linear-models/">Linear Models
+      <h1 class="title"><a href="https://punit-haria.github.io/posts/linear-models/">Linear Gaussian Models
 
   
     
   
 </a></h1>
       <div class="content">
-        Several methods for unsupervised learning have seen ubiquitous use, past and present, across many scientific communities. These include factor analysis, principal component analysis (PCA), Gaussian mixture models, vector quantization, Kalman filters, and hidden Markov models (HMMs). In this post, I outline how these methods can be unified into a single framework, as is shown in the classic Roweis and Ghahramani (1999) paper.
-Factor analysis is a method for explaining the variance among observations using a smaller set of unobserved (or latent) factors.
+        One set of unsupervised methods has stood the test of time, having widespread use across many fields: factor analysis, principal component analysis (PCA), Gaussian mixture models, vector quantization, Kalman filters, and hidden Markov models (HMMs). Factor analysis tries to explain the variance among observations using a smaller set of unobserved (or latent) factors. It&rsquo;s applicability is far-reaching, with examples in psychometrics, microbiology, and marketing. PCA transforms a set of observations into a smaller set of uncorrelated variables, usually being the go-to first step in dimensionality reduction for most datasets.
         
         <a class="button is-link" href="https://punit-haria.github.io/posts/linear-models/" style="height:28px">
           Read more
